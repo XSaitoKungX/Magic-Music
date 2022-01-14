@@ -136,8 +136,8 @@ Derzeit verfügbare Gebietsschemata sind:
 
 ## 🤝 Contributing
 
-1. [Fork the repository](https://github.com/eritislami/evobot/fork)
-2. Clone your fork: `git clone https://github.com/your-username/evobot.git`
+1. [Fork the repository](https://github.com/XSaitoKungX/Magic-Music/fork)
+2. Clone your fork: `git clone https://github.com/your-username/Magic-Music.git`
 3. Create your feature branch: `git checkout -b my-new-feature`
 4. Stage changes `git add .`
 5. Commit your changes: `cz` OR `npm run commit` do not use `git commit`
@@ -146,4 +146,4 @@ Derzeit verfügbare Gebietsschemata sind:
 
 ## 📝 Credits
 
-[@iCrawl](https://github.com/iCrawl) For the queue system used in this application which was adapted from [@iCrawl/discord-music-bot](https://github.com/iCrawl/discord-music-bot)
+[@iCrawl](https://github.com/iCrawl) Für das in dieser Anwendung verwendete Warteschlangensystem, das von angepasst [@iCrawl/discord-music-bot](https://github.com/iCrawl/discord-music-bot) wurde
