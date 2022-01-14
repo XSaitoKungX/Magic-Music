@@ -146,4 +146,4 @@ Derzeit verfügbare Gebietsschemata sind:
 
 ## 📝 Credits
 
-[@iCrawl](https://github.com/iCrawl) Für das in dieser Anwendung verwendete Warteschlangensystem, das von angepasst [@iCrawl/discord-music-bot](https://github.com/iCrawl/discord-music-bot) wurde
+[@iCrawl](https://github.com/iCrawl) Für das in dieser Anwendung verwendete Warteschlangensystem, das von [@iCrawl/discord-music-bot](https://github.com/iCrawl/discord-music-bot) angepasst wurde
