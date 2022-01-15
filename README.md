@@ -104,7 +104,10 @@ Beispiele: `1` or `1,2,3`
 * Command Handler from [discordjs.guide](https://discordjs.guide/)
 * Media Controls via Reactions
 
-![reactions](../Images/mc!play.png)
+<!-- ![reactions](https://i.imgur.com/9S7Omf9.png) -->
+<!-- <div align="left"><img src="/assets/play.png"></div><div align="center"><img src="/assets/queue.png"></div><div align="right"><img src="/assets/seek.png"></div> -->
+
+<div align="center"><img src="/Images/mc!play.png"></div>
 
 ## 🌎 Locales
 
