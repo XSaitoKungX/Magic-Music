@@ -105,7 +105,7 @@ Beispiele: `1` or `1,2,3`
 * Media Controls via Reactions
 
 <!-- ![reactions](https://i.imgur.com/9S7Omf9.png) -->
-<div align="left"><img src="/Images/Search.png"></div><div align="center"><img src="/Images/play.png"></div><div align="center"><img src="/Images/lyrics.png"></div>
+<div align="left"><img src="/Images/Search.png"></div><div align="center"><img src="/Images/play.png"></div><div align="left"><img src="/Images/lyrics.png"></div>
 
 <div align="left"><img src="/Images/now playing.png"></div><div align="left"><img src="/Images/queue.png">
 
