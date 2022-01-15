@@ -74,7 +74,7 @@ docker run -e "TOKEN=<discord-token>" -e "YOUTUBE_API_KEY=<youtube-key>" eritisl
 
 Antworten Sie mit der Songnummer oder den durch Komma getrennten Nummern, die Sie spielen möchten
 
-Beispiele: `1` or `1,2,3`
+Beispiele: `1` oder `1,2,3`
 
 * 📃 YouTube-Wiedergabelisten über URL abspielen
 
@@ -82,7 +82,7 @@ Beispiele: `1` or `1,2,3`
 
 * 🔎 Spielen Sie YouTube-Wiedergabelisten über eine Suchanfrage ab
 
-`/playlist linkin park meteora`
+`mc!playlist ncs`
 * Now Playing (mc!np)
 * Queue system (mc!queue, mc!q)
 * Loop / Repeat (mc!loop)
