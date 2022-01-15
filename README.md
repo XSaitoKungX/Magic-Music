@@ -38,7 +38,7 @@ Kopieren oder benennen Sie `config.json.example` in `config.json` um und füllen
   "MAX_PLAYLIST_SIZE": 10,
   "PREFIX": "",
   "PRUNING": false,
-  "LOCALE": "en",
+  "LOCALE": "de",
   "DEFAULT_VOLUME": 100,
   "STAY_TIME": 30
 }
@@ -104,7 +104,7 @@ Beispiele: `1` or `1,2,3`
 * Command Handler from [discordjs.guide](https://discordjs.guide/)
 * Media Controls via Reactions
 
-![reactions](https://i.imgur.com/9S7Omf9.png)
+![reactions](../Images/mc!play.png)
 
 ## 🌎 Locales
 
