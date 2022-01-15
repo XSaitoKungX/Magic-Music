@@ -58,11 +58,11 @@ docker run -e "TOKEN=<discord-token>" -e "YOUTUBE_API_KEY=<youtube-key>" eritisl
 
 * 🎶 Musik von YouTube über URL abspielen
 
-`mc!play https://www.youtube.com/watch?v=GLvohMXgcBo`
+`mc!play https://www.youtube.com/watch?v=NaFd8ucHLuo`
 
 * 🔎 Musik von YouTube per Suchanfrage abspielen
 
-`mc!play under the bridge red hot chili peppers`
+`mc!play abcdefu`
 
 * 🎶 Musik von Soundcloud über URL abspielen
 
@@ -70,7 +70,7 @@ docker run -e "TOKEN=<discord-token>" -e "YOUTUBE_API_KEY=<youtube-key>" eritisl
 
 * 🔎 Suchen und wählen Sie Musik zum Abspielen aus
 
-`mc!search Pearl Jam`
+`mc!search Nico Santos`
 
 Antworten Sie mit der Songnummer oder den durch Komma getrennten Nummern, die Sie spielen möchten
 
@@ -105,9 +105,9 @@ Beispiele: `1` or `1,2,3`
 * Media Controls via Reactions
 
 <!-- ![reactions](https://i.imgur.com/9S7Omf9.png) -->
-<!-- <div align="left"><img src="/assets/play.png"></div><div align="center"><img src="/assets/queue.png"></div><div align="right"><img src="/assets/seek.png"></div> -->
+<div align="left"><img src="/Images/Search.png"></div><div align="center"><img src="/Images/play.png"></div><div align="right"><img src="/Images/lyrics.png"></div>
 
-<div align="center"><img src="/Images/mc!play.png"></div>
+<div align="left"><img src="/Images/now playing.png"></div><div align="center"><img src="/Images/queue.png">
 
 ## 🌎 Locales
 
