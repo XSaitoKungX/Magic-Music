@@ -19,12 +19,14 @@ client.queue = new Map();
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
+require('http').createServer((req, res) => res.end("Magic-Music ist jetzt online! Trete dem Support-Server bei https://dsc.gg/infinity-support")).listen(3000)
+
 /**
  * Client Events
  */
 client.on("ready", () => {
   console.log(`Successfully logged in as: ${client.user.username}#${client.user.discriminator}`);
-  client.user.setActivity(`${PREFIX}help and ${PREFIX}play`, { type: "LISTENING" });
+  client.user.setActivity(`${PREFIX}help || ${PREFIX}play`, { type: "LISTENING" });
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
