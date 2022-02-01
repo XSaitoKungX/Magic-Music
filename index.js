@@ -8,8 +8,8 @@ const { TOKEN, PREFIX } = require("./util/Util");
 const i18n = require("./util/i18n");
 
 const client = new Client({
-  disableMentions: "everyone",
-  restTimeOffset: 0
+    disableMentions: "everyone",
+    restTimeOffset: 0
 });
 
 client.login(TOKEN);
@@ -19,71 +19,69 @@ client.queue = new Map();
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-require('http').createServer((req, res) => res.end("Magic-Music ist jetzt online! Trete dem Support-Server bei https://dsc.gg/infinity-support")).listen(3000)
-
 /**
  * Client Events
  */
 client.on("ready", () => {
-  console.log(`Successfully logged in as: ${client.user.username}#${client.user.discriminator}`);
-  client.user.setActivity(`${PREFIX}help || ${PREFIX}play`, { type: "LISTENING" });
+    console.log(`Successfully logged as: ${client.user.username}#${client.user.discriminator}`);
+    client.user.setAvatar(`${PREFIX}help | ${PREFIX}play`, { type: "LISTENING" });
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
 
 /**
- * Import all commands
+ * Import all Commands
  */
-const commandFiles = readdirSync(join(__dirname, "commands")).filter((file) => file.endsWith(".js"));
+const commandFiles = readdirSync(join(_dirname, "commands")).filter((file) => file.endsWith(".js"));
 for (const file of commandFiles) {
-  const command = require(join(__dirname, "commands", `${file}`));
-  client.commands.set(command.name, command);
+    const command = require(join(_dirname, "commands", `${file}`));
+    client.commands.set(command.name, command);
 }
 
 client.on("message", async (message) => {
-  if (message.author.bot) return;
-  if (!message.guild) return;
+    if (message.author.bot) return;
+    if (!message.guild) return;
 
-  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(PREFIX)})\\s*`);
-  if (!prefixRegex.test(message.content)) return;
+    const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(PREFIX)})\\s*`);
+    if (!prefixRegex.test(message.content)) return;
 
-  const [, matchedPrefix] = message.content.match(prefixRegex);
+    const [, matchedPrefix] = message.content.match(prefixRegex);
+    
+    const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
+    const commandName = args.shift().toLowerCase();
 
-  const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
-  const commandName = args.shift().toLowerCase();
+    const command = 
+        client.commands.get(commandName) || 
+        client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
 
-  const command =
-    client.commands.get(commandName) ||
-    client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
+        if (!command) return;
 
-  if (!command) return;
+        if (!cooldowns.has(command.name)) {
+            cooldowns.set(command.name, new Collection());
+        };
 
-  if (!cooldowns.has(command.name)) {
-    cooldowns.set(command.name, new Collection());
-  }
+        const now = Date.now();
+        const timestamps = cooldowns.get(command.name);
+        const cooldownAmount = (command.cooldown || 1) * 1000;
 
-  const now = Date.now();
-  const timestamps = cooldowns.get(command.name);
-  const cooldownAmount = (command.cooldown || 1) * 1000;
+        if (timestamps.has(message.author.id)) {
+            const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
 
-  if (timestamps.has(message.author.id)) {
-    const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
+            if (now < expirationTime) {
+                const timeLeft = (expirationTime - now) / 1000;
+                return message.reply(
+                    i18n.__mf("common.cooldownMessage", { time: timeLeft.toFixed(1), name: command.name})
+                );
+            };
+        };
 
-    if (now < expirationTime) {
-      const timeLeft = (expirationTime - now) / 1000;
-      return message.reply(
-        i18n.__mf("common.cooldownMessage", { time: timeLeft.toFixed(1), name: command.name })
-      );
-    }
-  }
+        timestamps.set(message.author.id, now);
+        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
-  timestamps.set(message.author.id, now);
-  setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
-
-  try {
-    command.execute(message, args);
-  } catch (error) {
-    console.error(error);
-    message.reply(i18n.__("common.errorCommand")).catch(console.error);
-  }
+        try {
+            command.execute(message, args);
+        } catch (error) {
+            console.error(error);
+            message.reply(i18n.__("common.errorCommand")).catch(console.error);
+        }
 });

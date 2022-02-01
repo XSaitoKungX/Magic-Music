@@ -1,7 +1,8 @@
 {
-  "name": "Magic Music",
-  "description": "🤖 Discord Music Bot built with discord.js",
-  "repository": "https://github.com/XSaitoKungX/Magic-Music",
-  "logo": "https://i.imgur.com/JFxgbWH.png",
-  "keywords": ["discord", "discordjs", "music", "bot"]
-}
+    "name": "Magic Music",
+    "description": "🤖 Discord Music Bot built with discord.js",
+    "repository": "https://github.com/XSaitoKungX/Magic-Music",
+    "logo": "https://i.imgur.com/JFxgbWH.png",
+    "keywords": ["discord", "discordjs", "music", "bot"]
+  }
+  

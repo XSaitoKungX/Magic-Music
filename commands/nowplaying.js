@@ -3,7 +3,8 @@ const { MessageEmbed } = require("discord.js");
 const i18n = require("../util/i18n");
 
 module.exports = {
-  name: "np",
+  name: "nowplaying",
+  aliases: ["np", "yet", "whatnow", "wn"],
   description: i18n.__("nowplaying.description"),
   execute(message) {
     const queue = message.client.queue.get(message.guild.id);

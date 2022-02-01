@@ -1,23 +1,23 @@
 FROM node:14.16.1-slim
 
-ENV USER=evobot
+ENV USER=Magic-Music
 
 # install python and make
 RUN apt-get update && \
 	apt-get install -y python3 build-essential && \
 	apt-get purge -y --auto-remove
 
-# create evobot user
+# create Magic-Music user
 RUN groupadd -r ${USER} && \
-	useradd --create-home --home /home/evobot -r -g ${USER} ${USER}
+	useradd --create-home --home /home/Magic-Music -r -g ${USER} ${USER}
 
 # set up volume and user
 USER ${USER}
-WORKDIR /home/evobot
+WORKDIR /home/Magic-Music
 
 COPY --chown=${USER}:${USER} package*.json ./
 RUN npm install
-VOLUME [ "/home/evobot" ]
+VOLUME [ "/home/Magic-Music" ]
 
 COPY --chown=${USER}:${USER}  . .
 
