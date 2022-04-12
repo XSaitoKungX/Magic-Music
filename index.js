@@ -24,7 +24,7 @@ const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
  */
 client.on("ready", () => {
     console.log(`Successfully logged as: ${client.user.username}#${client.user.discriminator}`);
-    client.user.setAvatar(`${PREFIX}help | ${PREFIX}play`, { type: "LISTENING" });
+    client.user.setActivity(`${PREFIX}help | ${PREFIX}play`, { type: "LISTENING" });
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
@@ -32,9 +32,9 @@ client.on("error", console.error);
 /**
  * Import all Commands
  */
-const commandFiles = readdirSync(join(_dirname, "commands")).filter((file) => file.endsWith(".js"));
+const commandFiles = readdirSync(join(__dirname, "commands")).filter((file) => file.endsWith(".js"));
 for (const file of commandFiles) {
-    const command = require(join(_dirname, "commands", `${file}`));
+    const command = require(join(__dirname, "commands", `${file}`));
     client.commands.set(command.name, command);
 }
 

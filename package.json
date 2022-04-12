@@ -18,6 +18,7 @@
     "ffmpeg-static": "^4.4.1",
     "i18n": "^0.13.4",
     "lyrics-finder": "^21.0.5",
+    "nodemon": "^2.0.15",
     "simple-youtube-api": "^5.1.1",
     "soundcloud-downloader": "^0.2.3",
     "string-progressbar": "^1.0.4",
@@ -26,7 +27,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "commit": "cz"
+    "commit": "cz",
+    "test": "nodemon index.js"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0"
